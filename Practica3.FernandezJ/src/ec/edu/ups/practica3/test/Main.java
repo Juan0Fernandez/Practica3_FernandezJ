@@ -60,7 +60,7 @@ public class Main {
 		// Variable para almacenar la opciónque ingresa el usuario
 		int opcion;
 
-		if (bibliotecaControlador.listarBiblioteca() != null) {
+		if (bibliotecaControlador.listarBiblioteca() != null) {//Si no secrea la biblioteca no se puede realizar nada 
 			// Menú principal
 			do {
 				System.out.println("Bienvenido al Sistema de Gestión de  Biblioteca");

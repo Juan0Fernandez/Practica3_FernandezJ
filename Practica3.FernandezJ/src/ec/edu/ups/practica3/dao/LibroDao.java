@@ -16,45 +16,36 @@ public class LibroDao implements ILibroDao,IPrestableDao {
 	public LibroDao() {
         listaLibros = new ArrayList<>();
     }
-	
 	@Override
 	public void create(Libro libro) {
 		listaLibros.add(libro);
 		}
-
 	@Override
 	public Libro read(int id) {
 		for (Libro libro : listaLibros) {
             if(libro.getId()== id){
                 return libro;
             }
-        }		
-		return null;
+		}return null;
 	}
-
 	@Override
 	public boolean update(int id, Libro libro) {
-		
 		for (int i = 0; i < listaLibros.size(); i++) {
 			Libro libroEncontrado = listaLibros.get(i);
             if(libroEncontrado.getId() == id){
             	listaLibros.set(i, libro);
                 return true;
-            }
-            
+            }            
         }return false;
 	}
-
 	@Override
 	public boolean delete(int id) {
-		
 		for (int i = 0; i < listaLibros.size(); i++) {
             Libro libro = listaLibros.get(i);
             if(libro.getId() == id){
             	listaLibros.remove(i);
                 return true;
             }
-            
         }
         return false;
 	}

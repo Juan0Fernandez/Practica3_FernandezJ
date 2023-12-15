@@ -12,18 +12,14 @@ public class UsuarioControlador {
 	private IUsuarioDao usuarioDao;
 	private VistaUsuario vistaUsuario;
 	private Usuario usuario;
-	
-
-    public UsuarioControlador(IUsuarioDao usuarioDao, VistaUsuario vistaUsuario) {
+	public UsuarioControlador(IUsuarioDao usuarioDao, VistaUsuario vistaUsuario) {
         this.usuarioDao = usuarioDao;
         this.vistaUsuario = vistaUsuario;        
-    }
-    
+    }    
     public void crearCliente(){
         usuario = vistaUsuario.registroDeUsuario();
         usuarioDao.create(usuario);
-    }
-    
+    }    
     public void actualizarCliente(){
     	usuario = vistaUsuario.actualizarDatosUsuario();
         if(usuarioDao.update(usuario.getIdentificacion() , usuario) == true){
@@ -31,8 +27,7 @@ public class UsuarioControlador {
         }else{
         	vistaUsuario.mostrarAlertas("Ha ocurrido un error!");                    
         }            
-    }
-    
+    }    
     public void eliminarCliente(){
         String id = vistaUsuario.eliminarDatosUsuario();
         if(usuarioDao.delete(id) == true){
@@ -40,8 +35,7 @@ public class UsuarioControlador {
         }else{
         	vistaUsuario.mostrarAlertas("Ha ocurrido un error!");
         }
-    }
-    
+    }    
     public void buscarClientePorId(){
         String id = vistaUsuario.buscarDatosUsuario();
         usuario = usuarioDao.read(id);

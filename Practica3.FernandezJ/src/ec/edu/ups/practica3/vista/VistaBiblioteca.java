@@ -11,7 +11,7 @@ public class VistaBiblioteca {
     public VistaBiblioteca() {
         entrada = new Scanner(System.in);
     }
-    
+    //imprime los datos para registrar una biblioteca
     public Biblioteca registroDeBiblioteca(){
         System.out.println("------ Creacion de biblioteca ------");
         System.out.println("Ingresa el nombre la nueva biblioteca");

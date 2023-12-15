@@ -14,12 +14,10 @@ public class PrestamoDao implements IPrestamoDao{
 	public PrestamoDao() {
 		listaPrestamos = new ArrayList<>();
 	}
-	
 	@Override
 	public void create(Prestamo prestamo) {
 		listaPrestamos.add(prestamo);
 	}
-
 	@Override
 	public Prestamo read(int id) {
 
@@ -27,10 +25,8 @@ public class PrestamoDao implements IPrestamoDao{
             if(prestamo.getId()== id){
                 return prestamo;
             }
-        }		
-		return null;
+        }return null;
 	}
-
 	@Override
 	public boolean update(int id, Prestamo prestamo) {
 		for (int i = 0; i < listaPrestamos.size(); i++) {
@@ -38,12 +34,9 @@ public class PrestamoDao implements IPrestamoDao{
             if(prestamoEncontrado.getId() == id){
             	listaPrestamos.set(i, prestamo);
                 return true;
-            }
-            
-        }return false;
-        
+            }            
+        }return false;        
 	}
-
 	@Override
 	public boolean delete(int id) {
 		Iterator<Prestamo> iterator = listaPrestamos.iterator();

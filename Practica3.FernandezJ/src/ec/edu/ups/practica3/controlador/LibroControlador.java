@@ -83,11 +83,6 @@ public class LibroControlador {
 	        Usuario usuario = usuarioDao.read(identificacionUsuario);
 
 	        if (usuario != null) {
-	            // **Cambiar el siguiente bloque de código:**
-	            // Registrar el préstamo en la biblioteca
-	            // bibliotecaControlador.registrarPrestamo(idLibro, libro, usuario);
-	            
-	            // A:
 	            // Obtener la lista de préstamos actual de la biblioteca
 	            List<Prestamo> prestamos = bibliotecaControlador.obtenerPrestamos();
 
@@ -112,7 +107,6 @@ public class LibroControlador {
 	        vistaLibro.mostrarAlertas("No se pudo prestar el libro. Verifica el ID o la disponibilidad.");
 	    }
 	}
-	
 	public void mostrarLibrosPrestados(IUsuarioDao usuarioDao) {
 		List<Libro> librosPrestados = libroDao.findAll();
 	    if (librosPrestados.isEmpty()) {
@@ -124,9 +118,7 @@ public class LibroControlador {
 	            if (libro.getIdUsuarioPrestamo() != null) {
 	                // Obtener el usuario de préstamo
 	                Usuario usuario = usuarioDao.read(libro.getIdUsuarioPrestamo());
-
-	                // Verificar que el usuario sea diferente de null
-	                if (usuario != null) {
+	                if (usuario != null) {// Verificar que el usuario sea diferente de null
 	                    // Mostrar la información del libro prestado
 	                    vistaLibro.mostrarInformacionLibroPrestado(libro.getId(), libro.getTitulo(), libro.getAutor(), libro.getAño(), usuario.getNombre());
 	                } else {

@@ -15,13 +15,10 @@ public class BibliotecaDao implements IBibliotecaDao {
 		this.biblioteca = new Biblioteca(); // o cualquier otra lógica de inicialización
 	    
 	}
-
 	@Override
 	public void crearBiblioteca(Biblioteca biblioteca) {
 		this.biblioteca = biblioteca;
-		
 	}
-
 	@Override
 	public boolean actualizarBiblioteca(int id, Biblioteca biblioteca) {
 		// Implementación para actualizar si es necesario

@@ -19,8 +19,7 @@ public class VistaLibro {
     }
     public VistaLibro() {
         entrada = new Scanner(System.in);
-    }
-    
+    }    
     public Libro ingresarDatosLibro(){
     	// Agregar Libros al sistema
         System.out.println("¿Cuántos libros quiere agregar?");
@@ -42,13 +41,9 @@ public class VistaLibro {
             int año = entrada.nextInt();
             entrada.nextLine(); // Consumir la nueva línea
             libro = new Libro(id,titulo, autor, año, true);
-
-
-        }
+ }
         return libro;
-
-    }
-    
+    }    
     public Libro actualizarDatosLibro(){
     	Libro libro  = new Libro();
         System.out.println("Ingrese id del libro a modificar:");
@@ -91,12 +86,9 @@ public class VistaLibro {
         System.out.println("Datos del Libro: \n" + id + " - " + titulo + " - \n" + autor +" - " + año+" - " + disponible );
   
     }
-    
     public void mostrarAlertas(String mensaje){
         System.out.println(mensaje);
     } 
-    
-
 	public int libroPrestar(List<Libro> librosDisponibles) {
 	    mostrarListaLibrosDisponibles(librosDisponibles);
 	    System.out.println("------Prestar Libro------");
@@ -118,15 +110,11 @@ public class VistaLibro {
 	        // Obtener información del libro prestado
 	        Libro libroPrestado = prestamo.getLibro();
 	        Usuario usuario = prestamo.getUsuario();
-	        
 	        mostrarInformacionLibroPrestado(libroPrestado.getId(), libroPrestado.getTitulo(), libroPrestado.getAutor(), libroPrestado.getAño(), usuario.getNombre());
 	    }
-
-
 	    System.out.println("Ingresa el id del libro a devolver: ");
 	    int id = entrada.nextInt();
 	    entrada.nextLine(); // Consumir la nueva línea
-
 	    return id;
 	}
 	public void mostrarInformacionLibroPrestado(int id, String titulo, String autor, int año, String nombreUsuario) {

@@ -13,7 +13,6 @@ public class VistaUsuario {
 	public VistaUsuario () {
 		entrada = new Scanner(System.in);
 	}
-
     public Usuario registroDeUsuario(){
         System.out.println("------ Creacion de Usuario ------");
         System.out.println("Ingresa el nombre del usuario: ");
@@ -37,7 +36,6 @@ public class VistaUsuario {
         entrada.nextLine(); // Consumir la nueva línea
         return new Usuario(nombre, identificacion,correo);
     }
-    
     public String eliminarDatosUsuario(){
         System.out.println("------Eliminar Usuario------");
         System.out.println("Ingresa el id del cliente a eliminar");
